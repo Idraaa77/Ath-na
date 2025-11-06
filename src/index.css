@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-athena-black: #0D0D0D;
+  --color-athena-gold: #C6A664;
+  --color-athena-rose: #FFC8E1;
+  --color-athena-blue: #0071C5;
+}
