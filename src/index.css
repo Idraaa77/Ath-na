@@ -1,8 +1,32 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --color-athena-black: #0D0D0D;
-  --color-athena-gold: #C6A664;
-  --color-athena-rose: #FFC8E1;
-  --color-athena-blue: #0071C5;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+  margin: 0;
+  padding: 0;
 }
+
+:root {
+  --athena-black: #0a0a0a;
+  --athena-gold: #d4af37;
+  --athena-rose: #ffb6c1;
+  --athena-blue: #1a1e2e;
+}
+
+.text-athena-gold { color: var(--athena-gold); }
+.text-athena-rose { color: var(--athena-rose); }
+.bg-athena-black { background-color: var(--athena-black); }
+.bg-athena-blue { background-color: var(--athena-blue); }
+.border-athena-gold { border-color: var(--athena-gold); }
+
+section {
+  scroll-margin-top: 100px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hidden { opacity: 0; transform: translateY(30px); }
+.visible { opacity: 1; transform: translateY(0); }

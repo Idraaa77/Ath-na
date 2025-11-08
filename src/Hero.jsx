@@ -45,39 +45,39 @@ const Hero = () => {
           transition={{ delay: 1.2, duration: 1 }}
         >
           <img
-            src="/sponsors/pirelli.png"
-            alt="Pirelli"
-            className="h-12 md:h-14 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
+            src="/sponsors/bwt.png"
+            alt="BWT Alpine"
+            className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
           <img
-            src="/sponsors/bwt.png"
-            alt="BWT"
-            className="h-12 md:h-14 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
+            src="/sponsors/pirelli.png"
+            alt="Pirelli"
+            className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
           <img
             src="/sponsors/tagheuer.png"
             alt="TAG Heuer"
-            className="h-12 md:h-14 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
+            className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
           <img
             src="/sponsors/dior.png"
             alt="Dior"
-            className="h-12 md:h-14 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
+            className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
           <img
             src="/sponsors/sephora.png"
             alt="Sephora"
-            className="h-12 md:h-14 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
+            className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
           <img
             src="/sponsors/louboutin.png"
             alt="Louboutin"
-            className="h-12 md:h-14 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
+            className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
           <img
             src="/sponsors/nakedwolfe.png"
             alt="Naked Wolfe"
-            className="h-12 md:h-14 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
+            className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
         </motion.div>
       </div>
