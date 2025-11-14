@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import "./index.css";
 import Hero from "./Hero";
@@ -9,71 +8,38 @@ import PressReleases from "./PressReleases";
 import Palmares from "./Palmares";
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="bg-athena-black text-white min-h-screen">
-      {/* Navigation responsive */}
+      {/* Navigation */}
       <header className="fixed top-0 left-0 w-full z-50 bg-[#111]/95 backdrop-blur border-b border-[#a67c00]/40 shadow-md">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-          {/* Titre principal */}
-          <h1 className="text-[#d4af37] font-semibold tracking-wide text-sm md:text-base">
+        <nav className="max-w-7xl mx-auto flex items-center justify-between px-10 py-2">
+          <h1 className="text-[#d4af37] font-semibold tracking-wide text-base">
             ATHÉNA — <span className="text-[#f5d88c]">La Révolution Féminine de la F1</span>
           </h1>
 
-          {/* Menu burger mobile */}
-          <button
-            className="md:hidden text-[#d4af37] text-3xl focus:outline-none"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? "✕" : "☰"}
-          </button>
-
-          {/* Menu desktop */}
-          <ul className="hidden md:flex items-center gap-6 text-[15px] text-[#f8f8f8] font-light">
-            <li><a href="#home" className="hover:text-[#d4af37]">Accueil</a></li>
-            <li><a href="#profil" className="hover:text-[#d4af37]">Profil</a></li>
-            <li><a href="#career" className="hover:text-[#d4af37]">Carrière</a></li>
-            <li><a href="#season2025" className="hover:text-[#d4af37]">Saison 2025</a></li>
-            <li><a href="#season2026" className="hover:text-[#d4af37]">Saison 2026</a></li>
-            <li><a href="#press" className="hover:text-[#d4af37]">Presse</a></li>
+          <ul className="flex items-center gap-8 text-[15px] text-[#f8f8f8] font-light">
+            <li><a href="#home" className="hover:text-[#d4af37] transition">Accueil</a></li>
+            <li><a href="#profil" className="hover:text-[#d4af37] transition">Profil</a></li>
+            <li><a href="#career" className="hover:text-[#d4af37] transition">Carrière</a></li>
+            <li><a href="#season2025" className="hover:text-[#d4af37] transition">Saison 2025</a></li>
+            <li><a href="#season2026" className="hover:text-[#d4af37] transition">Saison 2026</a></li>
+            <li><a href="#palmares" className="hover:text-[#d4af37] transition">Palmarès</a></li>
+            <li><a href="#press" className="hover:text-[#d4af37] transition">Presse</a></li>
           </ul>
         </nav>
-
-        {/* Menu mobile déroulant */}
-        {menuOpen && (
-          <motion.ul
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden flex flex-col items-center gap-4 text-lg bg-[#111]/95 py-4 border-t border-[#a67c00]/30"
-          >
-            <li><a href="#home" onClick={() => setMenuOpen(false)}>Accueil</a></li>
-            <li><a href="#profil" onClick={() => setMenuOpen(false)}>Profil</a></li>
-            <li><a href="#career" onClick={() => setMenuOpen(false)}>Carrière</a></li>
-            <li><a href="#season2025" onClick={() => setMenuOpen(false)}>Saison 2025</a></li>
-            <li><a href="#season2026" onClick={() => setMenuOpen(false)}>Saison 2026</a></li>
-            <li><a href="#press" onClick={() => setMenuOpen(false)}>Presse</a></li>
-          </motion.ul>
-        )}
       </header>
 
-      {/* HERO */}
+      {/* Hero */}
       <section id="home" className="pt-20">
         <Hero />
       </section>
 
-      {/* PROFIL */}
-      <section
-        id="profil"
-        className="py-24 px-6 md:px-32 bg-athena-blue/10 text-center relative overflow-hidden"
-      >
-        <h2 className="text-3xl font-bold text-athena-gold mb-10">
-          Mieux connaître Séréna Salvini
-        </h2>
+      {/* Profil */}
+      <section id="profil" className="py-24 px-8 md:px-32 bg-athena-blue/10 text-center relative overflow-hidden">
+        <h2 className="text-3xl font-bold text-athena-gold mb-10">Mieux connaître Séréna Salvini</h2>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-5xl mx-auto text-left">
-          {/* Infos */}
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-10 max-w-5xl mx-auto text-left">
+          {/* Texte */}
           <motion.div
             className="flex-1 bg-athena-black/70 border border-athena-gold rounded-2xl shadow-lg p-8"
             initial={{ opacity: 0, y: 50 }}
@@ -93,51 +59,18 @@ function App() {
             <p><strong>Idole :</strong> Lionel Messi 🐐</p>
             <p><strong>Plat préféré :</strong> Pâtes 🍝</p>
             <p>
-              <strong>Meilleure amie :</strong>{" "}
-              Amélia Étienne (
-              <a
-                href="https://instagram.com/ameliatnn"
-                target="_blank"
-                className="text-athena-rose hover:underline"
-              >
-                @ameliatnn
-              </a>
-              )
+              <strong>Meilleure amie :</strong> Amélia Étienne (
+              <a href="https://instagram.com/ameliatnn" target="_blank" className="text-athena-rose hover:underline">@ameliatnn</a>)
             </p>
-
-            {/* Réseaux */}
-            <div className="mt-6 space-y-2 text-center">
-              <p>
-                <strong>Twitter :</strong>{" "}
-                <a
-                  href="https://twitter.com/Serenaaade_"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-athena-gold hover:text-athena-rose transition underline"
-                >
-                  @Serenaaade_
-                </a>
-              </p>
-
-              <p>
-                <strong>Instagram :</strong>{" "}
-                <a
-                  href="https://instagram.com/Serenaaade_"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-athena-gold hover:text-athena-rose transition underline"
-                >
-                  @Serenaaade_
-                </a>
-              </p>
-            </div>
+            <p><strong>Twitter :</strong> <a href="https://twitter.com/Serenaaade_" target="_blank" className="text-athena-rose hover:underline">@Serenaaade_</a></p>
+            <p><strong>Instagram :</strong> <a href="https://instagram.com/Serenaaade_" target="_blank" className="text-athena-rose hover:underline">@Serenaaade_</a></p>
 
             <p className="italic text-athena-rose mt-6">
               « Le sport, c’est plus qu’une passion — c’est mon langage. »
             </p>
           </motion.div>
 
-          {/* Photo */}
+          {/* Image */}
           <motion.div
             className="flex-1 max-w-sm rounded-2xl overflow-hidden border-2 border-athena-gold shadow-[0_0_40px_rgba(255,215,0,0.3)]"
             initial={{ opacity: 0, x: 80 }}
@@ -147,24 +80,61 @@ function App() {
           >
             <img
               src="/galerie/serena-om-warriors.jpg"
-              alt="Séréna Salvini avec maillot OM et Warriors"
+              alt="Séréna Salvini"
               className="w-full h-full object-cover brightness-110 contrast-110 hover:scale-105 transition-transform duration-1000 ease-out"
             />
           </motion.div>
         </div>
       </section>
 
-      {/* AUTRES SECTIONS */}
+      {/* Carrière */}
       <section id="career"><Career /></section>
+
+      {/* Saisons */}
       <section id="season2025"><Season2025 /></section>
       <section id="season2026"><Season2026 /></section>
+
+      {/* Palmarès */}
       <section id="palmares"><Palmares /></section>
+
+      {/* Presse */}
       <section id="press"><PressReleases /></section>
 
-      {/* FOOTER */}
+      {/* 🌟 Sponsors Officiels */}
+      <section className="py-16 bg-gradient-to-b from-black via-[#0a0a0a] to-[#111] text-center border-t border-athena-gold/40">
+        <h2 className="text-3xl font-bold text-athena-gold mb-10">Nos Sponsors Officiels</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-10 px-8 max-w-6xl mx-auto">
+          {[
+            { name: "Alpine", img: "/sponsors/alpine.png", url: "https://www.alpinecars.com/" },
+            { name: "Pirelli", img: "/sponsors/pirelli.png", url: "https://www.pirelli.com/" },
+            { name: "TAG Heuer", img: "/sponsors/tagheuer.png", url: "https://www.tagheuer.com/" },
+            { name: "Dior", img: "/sponsors/dior.png", url: "https://www.dior.com/fr_be/fashion/products/M2820OSHJ_M900" },
+            { name: "Sephora", img: "/sponsors/sephora.png", url: "https://www.sephora.fr/" },
+            { name: "Louboutin", img: "/sponsors/louboutin.png", url: "https://us.christianlouboutin.com/us_en/so-kate-black-3130694bk01.html" },
+            { name: "Naked Wolfe", img: "/sponsors/nakedwolfe.png", url: "https://nakedwolfe.com/products/spice-black-stretch" },
+          ].map((sponsor, i) => (
+            <motion.a
+              key={i}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.08 }}
+              className="flex justify-center items-center"
+            >
+              <img
+                src={sponsor.img}
+                alt={sponsor.name}
+                className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-all duration-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]"
+              />
+            </motion.a>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer className="py-6 text-center border-t border-athena-gold bg-athena-black/90">
         <p className="text-athena-gold text-sm">
-          © 2026 Serena Salvini — BWT Alpine F1 Team — Dior — Louboutin — Naked Wolfe — TAG Heuer — Sephora
+          © 2026 Serena Salvini — Tous droits réservés — Inspiré par la passion et la vitesse ⚡
         </p>
       </footer>
     </div>
