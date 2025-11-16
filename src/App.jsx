@@ -13,8 +13,10 @@ import { useEffect, useState, useRef } from "react";
 
 
 function App() {
+  
   const [showIntro, setShowIntro] = useState(true);
   const audioRef = useRef(null);
+  
 
   // Timer pour cacher l'intro après 3,5 secondes
   useEffect(() => {
@@ -221,10 +223,12 @@ function App() {
       </section>
 
       {/* Profil */}
-      <section
+    
+<section
   id="profil"
   className="py-20 px-4 sm:px-6 lg:px-24 bg-athena-blue/10 text-center relative overflow-hidden"
 >
+
 
         <h2 className="text-3xl font-bold text-athena-gold mb-10">Mieux connaître Séréna Salvini</h2>
 
