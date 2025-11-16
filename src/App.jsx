@@ -43,7 +43,9 @@ function App() {
 
 
   return (
-    <div className="bg-athena-black text-white min-h-screen">
+
+  <div className="bg-athena-black text-white min-h-screen overflow-x-hidden">
+
             <AnimatePresence>
         {showIntro && (
           <motion.div
@@ -151,25 +153,67 @@ function App() {
 
 
       {/* Navigation */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-[#111]/95 backdrop-blur border-b border-[#a67c00]/40 shadow-md">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between px-10 py-2">
-          <h1 className="text-[#d4af37] font-semibold tracking-wide text-base">
-            ATHÉNA — <span className="text-[#f5d88c]">La Révolution Féminine de la F1</span>
-          </h1>
+     <header className="fixed top-0 left-0 w-full z-50 bg-[#111]/95 backdrop-blur border-b border-[#a67c00]/40 shadow-md">
+  <nav className="max-w-7xl mx-auto flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between px-4 sm:px-6 lg:px-10 py-3">
+    {/* Titre */}
+    <h1 className="text-[#d4af37] font-semibold tracking-wide text-sm sm:text-base text-center sm:text-left leading-snug">
+      ATHÉNA —{" "}
+      <span className="text-[#f5d88c]">
+        La Révolution Féminine de la F1
+      </span>
+    </h1>
 
-          <ul className="flex items-center gap-8 text-[15px] text-[#f8f8f8] font-light">
-            <li><a href="#home" className="hover:text-[#d4af37] transition">Accueil</a></li>
-            <li><a href="#profil" className="hover:text-[#d4af37] transition">Profil</a></li>
-            <li><a href="#career" className="hover:text-[#d4af37] transition">Carrière</a></li>
-            <li><a href="#season2025" className="hover:text-[#d4af37] transition">Saison 2025</a></li>
-            <li><a href="#season2026" className="hover:text-[#d4af37] transition">Saison 2026</a></li>
-            <li><a href="#season2027" className="hover:text-[#d4af37] transition">Saison 2027</a></li>
-            <li><a href="#palmares" className="hover:text-[#d4af37] transition">Palmarès</a></li>
-            <li><a href="#stats" className="hover:text-[#d4af37] transition">Stats</a></li>
-            <li><a href="#press" className="hover:text-[#d4af37] transition">Presse</a></li>
-          </ul>
-        </nav>
-      </header>
+    {/* Liens */}
+    <ul className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-5 text-[11px] sm:text-[14px] text-[#f8f8f8] font-light">
+      <li>
+        <a href="#home" className="hover:text-[#d4af37] transition">
+          Accueil
+        </a>
+      </li>
+      <li>
+        <a href="#profil" className="hover:text-[#d4af37] transition">
+          Profil
+        </a>
+      </li>
+      <li>
+        <a href="#career" className="hover:text-[#d4af37] transition">
+          Carrière
+        </a>
+      </li>
+      <li>
+        <a href="#season2025" className="hover:text-[#d4af37] transition">
+          Saison 2025
+        </a>
+      </li>
+      <li>
+        <a href="#season2026" className="hover:text-[#d4af37] transition">
+          Saison 2026
+        </a>
+      </li>
+      <li>
+        <a href="#season2027" className="hover:text-[#d4af37] transition">
+          Saison 2027
+        </a>
+      </li>
+      <li>
+        <a href="#palmares" className="hover:text-[#d4af37] transition">
+          Palmarès
+        </a>
+      </li>
+      <li>
+        <a href="#stats" className="hover:text-[#d4af37] transition">
+          Stats
+        </a>
+      </li>
+      <li>
+        <a href="#press" className="hover:text-[#d4af37] transition">
+          Presse
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 
       {/* Hero */}
       <section id="home" className="pt-20">
@@ -177,7 +221,11 @@ function App() {
       </section>
 
       {/* Profil */}
-      <section id="profil" className="py-24 px-8 md:px-32 bg-athena-blue/10 text-center relative overflow-hidden">
+      <section
+  id="profil"
+  className="py-20 px-4 sm:px-6 lg:px-24 bg-athena-blue/10 text-center relative overflow-hidden"
+>
+
         <h2 className="text-3xl font-bold text-athena-gold mb-10">Mieux connaître Séréna Salvini</h2>
 
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-10 max-w-5xl mx-auto text-left">

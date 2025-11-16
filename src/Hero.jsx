@@ -20,7 +20,7 @@ const Hero = () => {
       {/* Contenu principal */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
         <motion.h1
-          className="text-5xl md:text-7xl font-extrabold text-athena-gold mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.4)]"
+          className="text-4xl md:text-7xl font-extrabold text-athena-gold mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.4)]"
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
