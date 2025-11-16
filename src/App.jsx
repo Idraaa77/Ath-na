@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import "./index.css";
 import Hero from "./Hero";
 import Career from "./Career";
@@ -8,10 +7,149 @@ import Season2027 from "./Season2027";
 import PressReleases from "./PressReleases";
 import Palmares from "./Palmares";
 import Stats from "./Stats";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+
+
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+  const audioRef = useRef(null);
+
+  // Timer pour cacher l'intro après 3,5 secondes
+  useEffect(() => {
+    const timer = setTimeout(() => setShowIntro(false), 3500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Débloquer le son au premier clic n'importe où
+  useEffect(() => {
+    const enableSound = () => {
+      if (audioRef.current) {
+        audioRef.current.muted = false;
+        audioRef.current
+          .play()
+          .catch(() => {
+            // ignore si le navigateur bloque encore
+          });
+      }
+      window.removeEventListener("click", enableSound);
+    };
+
+    window.addEventListener("click", enableSound);
+    return () => window.removeEventListener("click", enableSound);
+  }, []);
+
+
+
   return (
     <div className="bg-athena-black text-white min-h-screen">
+            <AnimatePresence>
+        {showIntro && (
+          <motion.div
+            className="fixed inset-0 z-[999] bg-black flex items-center justify-center overflow-hidden"
+            initial={{ opacity: 1, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            {/* FLASH BLANC */}
+            <motion.div
+              className="absolute inset-0 bg-white pointer-events-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            />
+
+            {/* AUDIO (muted au début) */}
+            <audio
+              ref={audioRef}
+              src="/audio/intro-whoosh.mp3"
+              muted
+              autoPlay
+            />
+
+            <div className="relative w-full max-w-6xl px-6 flex flex-col items-center">
+              {/* LOGO RED BULL */}
+              <motion.img
+                src="/sponsors/redbull.png"
+                alt="Red Bull Logo"
+                className="w-40 mb-10 opacity-90"
+                initial={{ opacity: 0, scale: 0.7, y: -20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+              />
+
+              {/* LIGNE LUMINEUSE */}
+              <motion.div
+                className="w-full h-[3px] bg-gradient-to-r from-transparent via-athena-gold/90 to-transparent mb-8"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.9, ease: "easeOut" }}
+              />
+
+ {/* NOM PRINCIPAL */}
+<motion.h1
+  className="text-5xl md:text-7xl font-extrabold text-athena-gold tracking-wide drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]"
+  initial={{ opacity: 0, y: 40 }}
+  animate={{
+    opacity: [0, 1, 1, 1],
+    y: [40, 0, -2, 0],
+    x: [0, 0, -3, 0],
+    skewX: [0, 0, 6, 0],
+  }}
+  transition={{ delay: 0.4, duration: 0.6 }}
+>
+  SERENA SALVINI
+</motion.h1>
+
+{/* ATHÉNA // RED BULL RACING — bien centré, espacé */}
+<motion.p
+  className="mt-5 text-sm md:text-base uppercase tracking-[0.45em] text-athena-rose/90"
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.7, duration: 0.5 }}
+>
+  ATHÉNA // RED BULL RACING
+</motion.p>
+
+{/* TAGLINE */}
+<motion.p
+  className="mt-6 text-base md:text-xl text-neutral-200 tracking-wide"
+  initial={{ opacity: 0, y: 15 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.9, duration: 0.6 }}
+>
+  Première femme victorieuse en Formule 1 moderne 🏁
+</motion.p>
+
+{/* BARRE SOUS LE NOM */}
+<motion.div
+  className="w-32 md:w-40 h-[3px] mt-6 bg-athena-gold/70 rounded-full"
+  initial={{ scaleX: 0 }}
+  animate={{ scaleX: 1 }}
+  transition={{ delay: 1.1, duration: 0.5 }}
+/>
+
+
+
+              {/* TAG EN BAS */}
+              <motion.p
+                className="absolute bottom-12 text-[10px] md:text-xs uppercase tracking-[0.4em] text-neutral-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.3, duration: 0.7 }}
+              >
+                
+              </motion.p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+
+
+
       {/* Navigation */}
       <header className="fixed top-0 left-0 w-full z-50 bg-[#111]/95 backdrop-blur border-b border-[#a67c00]/40 shadow-md">
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-10 py-2">
