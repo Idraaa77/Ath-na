@@ -5,85 +5,78 @@ const Season2026 = () => {
   const [selectedGP, setSelectedGP] = useState(null);
 
   // ===== STATS GLOBALES 2026 =====
-  const stats = [
-    { label: "🏆 Victoires", value: 5 },
-    { label: "🥇 Podiums", value: 13 },
-    { label: "⚡ Poles", value: 4 },
-    { label: "🏁 Points", value: 411 },
-    { label: "🏆 Place au championnat", value: "P2" }, // à changer si tu veux P1 etc.
+  const stats2026 = [
+    { label: "Équipe", value: "BWT Alpine F1 Team", teamColor: "alpine" },
+    { label: "🏆 Victoires", value: "5" },
+    { label: "🥇 Podiums", value: "13" },
+    { label: "⚡ Poles", value: "4" },
+    { label: "🏁 Points", value: "324" },
+    { label: "🏆 Place au championnat", value: "P2" },
   ];
 
-  // ===== MOMENTS FORTS 2026 : 5 VICTOIRES =====
-  const highlights2026 = [
+
+   // ===== MOMENTS FORTS 2026 : 5 VICTOIRES (nouveau format) =====
+  const moments2026 = [
     {
-      id: 1,
       key: "autriche_inverse",
+      gpName: "Grand Prix d’Autriche (Inversé)",
       title: "Victoire en Autriche (Inversé) 🇦🇹",
-      subtitle: "Retourner le script, renverser l’ordre établi",
-      text: "Partie depuis le fond de grille sur une course inversée, Serena remonte le peloton avec une agressivité chirurgicale. Une victoire symbole : même quand tout est contre elle, elle trouve un chemin vers l’avant.",
+      subtitle: "Remontée depuis le fond de grille.",
+      quali: "P9",
+      course: "P1",
+      description:
+        "Sur une course à grille inversée, Séréna remonte tout le peloton et s’offre une victoire spectaculaire au Red Bull Ring.",
       bg: "/moments2026/autriche_inverse.jpg",
-      podiums: {
-        p1: "/podiums2026/autriche_inverse_p1.png",
-        p2: "/podiums2026/autriche_inverse_p2.png",
-        p3: "/podiums2026/autriche_inverse_p3.png",
-      },
     },
     {
-      id: 2,
       key: "belgique",
-      title: "Victoire en Belgique 🇧🇪",
-      subtitle: "Spa, la pluie, la domination totale",
-      text: "Sous un ciel capricieux, Serena transforme Spa en terrain de jeu. Gestion parfaite des pneus, rythme implacable et aucun faux pas : une victoire construite comme une partition.",
+      gpName: "Grand Prix de Belgique",
+      title: "Domination à Spa 🇧🇪",
+      subtitle: "Pole + victoire sous pression.",
+      quali: "P1",
+      course: "P1",
+      description:
+        "Sous la pluie et la pression, elle signe une pole puis une victoire sans partage à Spa-Francorchamps.",
       bg: "/moments2026/belgique.jpg",
-      podiums: {
-        p1: "/podiums2026/belgique_p1.png",
-        p2: "/podiums2026/belgique_p2.png",
-        p3: "/podiums2026/belgique_p3.png",
-      },
     },
     {
-      id: 3,
       key: "paysbas_inverse",
-      title: "Victoire aux Pays-Bas (Inversé) 🇳🇱",
-      subtitle: "De la 21ᵉ à la 1ʳᵉ place",
-      text: "Devant un public entièrement acquis à Verstappen, Serena écrit l’une des plus grandes remontées de l’ère moderne : partie du fond, elle remonte tout le monde pour s’imposer. Une révolte plus qu’une course.",
+      gpName: "Grand Prix des Pays-Bas (Inversé)",
+      title: "Remontée légendaire à Zandvoort 🇳🇱",
+      subtitle: "De la P21 à la P1 devant le public de Verstappen.",
+      quali: "P21",
+      course: "P1",
+      description:
+        "Partie en fond de grille, Séréna remonte tout le monde à Zandvoort pour s’imposer chez Verstappen lui-même.",
       bg: "/moments2026/paysbas_inverse.jpg",
-      podiums: {
-        p1: "/podiums2026/paysbas_inverse_p1.png",
-        p2: "/podiums2026/paysbas_inverse_p2.png",
-        p3: "/podiums2026/paysbas_inverse_p3.png",
-      },
     },
     {
-      id: 4,
       key: "singapour",
-      title: "Victoire à Singapour 🇸🇬",
-      subtitle: "La nuit où elle a fait plier la FIA",
-      text: "Pénalités contestées, décisions douteuses… et malgré tout, Serena s’impose sous les projecteurs de Marina Bay. Une revanche symbolique contre l’injustice, gagnée au mental autant qu’au volant.",
+      gpName: "Grand Prix de Singapour",
+      title: "Victoire à Marina Bay 🇸🇬",
+      subtitle: "Réponse parfaite aux polémiques.",
+      quali: "P1",
+      course: "P1",
+      description:
+        "Au cœur des polémiques avec la FIA, elle répond de la meilleure façon : pole et victoire sous les lumières de Singapour.",
       bg: "/moments2026/singapour.jpg",
-      podiums: {
-        p1: "/podiums2026/singapour_p1.png",
-        p2: "/podiums2026/singapour_p2.png",
-        p3: "/podiums2026/singapour_p3.png",
-      },
     },
     {
-      id: 5,
       key: "texas",
-      title: "Victoire à Austin 🇺🇸",
-      subtitle: "Sous le soleil du Texas",
-      text: "Sur le Circuit of the Americas, Serena signe une victoire tactique : gestion des relais, dépassements propres et contrôle total sur la fin de course. L’une des démonstrations les plus propres de sa saison.",
+      gpName: "Grand Prix des États-Unis (Austin)",
+      title: "Triomphe au Texas 🇺🇸",
+      subtitle: "Victoire tactique au COTA.",
+      quali: "P5",
+      course: "P1",
+      description:
+        "Sur le Circuit of the Americas, Séréna joue la stratégie parfaite et contrôle la course jusqu’au drapeau à damier.",
       bg: "/moments2026/texas.jpg",
-      podiums: {
-        p1: "/podiums2026/texas_p1.png",
-        p2: "/podiums2026/texas_p2.png",
-        p3: "/podiums2026/texas_p3.png",
-      },
     },
   ];
 
-  // ===== CALENDRIER 2026 (même principe que 2025) =====
-   const calendar2026 = [
+
+  // ===== CALENDRIER 2026 =====
+  const calendar2026 = [
     {
       gp: "Australie",
       flag: "🇦🇺",
@@ -96,7 +89,8 @@ const Season2026 = () => {
       flag: "🇨🇳",
       qualif: "P10",
       course: "P10",
-      resume: "Un week-end correct à Shanghai, points sécurisés sans prise de risque.",
+      resume:
+        "Un week-end correct à Shanghai, points sécurisés sans prise de risque.",
     },
     {
       gp: "Japon",
@@ -110,28 +104,32 @@ const Season2026 = () => {
       flag: "🇧🇭",
       qualif: "P21",
       course: "P4",
-      resume: "Grosse remontée de l’arrière du peloton jusqu’au pied du podium.",
+      resume:
+        "Grosse remontée de l’arrière du peloton jusqu’au pied du podium.",
     },
     {
       gp: "Jeddah",
       flag: "🇸🇦",
       qualif: "P19",
       course: "DNF",
-      resume: "Course stoppée prématurément dans les rues ultra-rapides de Djeddah.",
+      resume:
+        "Course stoppée prématurément dans les rues ultra-rapides de Djeddah.",
     },
     {
       gp: "Imola",
       flag: "🇮🇹",
       qualif: "P20",
       course: "DNF",
-      resume: "Week-end tendu à Imola, marqué par l’incident avec Verstappen.",
+      resume:
+        "Week-end tendu à Imola, marqué par l’incident avec Verstappen.",
     },
     {
       gp: "Monaco",
       flag: "🇲🇨",
       qualif: "P1",
       course: "P4",
-      resume: "Pole position dans les rues de Monte-Carlo, course plus chaotique le dimanche.",
+      resume:
+        "Pole position dans les rues de Monte-Carlo, course plus chaotique le dimanche.",
     },
     {
       gp: "Espagne",
@@ -145,14 +143,16 @@ const Season2026 = () => {
       flag: "🇨🇦",
       qualif: "P1",
       course: "P5",
-      resume: "Pole à Montréal, course solide mais frustrante en rythme pur.",
+      resume:
+        "Pole à Montréal, course solide mais frustrante en rythme pur.",
     },
     {
       gp: "Autriche (Inversé)",
       flag: "🇦🇹",
       qualif: "P9",
       course: "P1",
-      resume: "Course inversée : Serena remonte tout le monde et s’offre la victoire.",
+      resume:
+        "Course inversée : Serena remonte tout le monde et s’offre la victoire.",
     },
     {
       gp: "Autriche",
@@ -166,94 +166,114 @@ const Season2026 = () => {
       flag: "🇬🇧",
       qualif: "P10",
       course: "P2",
-      resume: "Silverstone livré en mode patronne, avec un podium au bout.",
+      resume:
+        "Silverstone livré en mode patronne, avec un podium au bout.",
     },
     {
       gp: "Belgique",
       flag: "🇧🇪",
       qualif: "P1",
       course: "P1",
-      resume: "Spa dominé de bout en bout : pole et victoire sous la pression.",
+      resume:
+        "Spa dominé de bout en bout : pole et victoire sous la pression.",
     },
     {
       gp: "Hongrie",
       flag: "🇭🇺",
       qualif: "P6",
       course: "P3",
-      resume: "Hungaroring solide, podium mérité sur un tracé exigeant.",
+      resume:
+        "Hungaroring solide, podium mérité sur un tracé exigeant.",
     },
     {
       gp: "Pays-Bas (Inversé)",
       flag: "🇳🇱",
       qualif: "P21",
       course: "P1",
-      resume: "Remontée légendaire de la 21ᵉ à la 1ʳᵉ place chez Verstappen.",
+      resume:
+        "Remontée légendaire de la 21ᵉ à la 1ʳᵉ place chez Verstappen.",
     },
     {
       gp: "Pays-Bas",
       flag: "🇳🇱",
       qualif: "P7",
       course: "DNF",
-      resume: "Course principale écourtée par un abandon, week-end contrasté.",
+      resume:
+        "Course principale écourtée par un abandon, week-end contrasté.",
     },
     {
       gp: "Monza",
       flag: "🇮🇹",
       qualif: "P2",
       course: "P5",
-      resume: "Temple de la vitesse : très bon samedi, dimanche plus compliqué.",
+      resume:
+        "Temple de la vitesse : très bon samedi, dimanche plus compliqué.",
     },
     {
       gp: "Bakou",
       flag: "🇦🇿",
       qualif: "P2",
       course: "P4",
-      resume: "Course urbaine propre à Bakou, bons points à l’arrivée.",
+      resume:
+        "Course urbaine propre à Bakou, bons points à l’arrivée.",
     },
     {
       gp: "Singapour",
       flag: "🇸🇬",
       qualif: "P1",
       course: "P1",
-      resume: "Pole et victoire à Marina Bay, réponse parfaite aux polémiques.",
+      resume:
+        "Pole et victoire à Marina Bay, réponse parfaite aux polémiques.",
     },
     {
       gp: "Texas (Austin)",
       flag: "🇺🇸",
       qualif: "P5",
       course: "P1",
-      resume: "COTA maîtrisé, victoire tactique sous le soleil du Texas.",
+      resume:
+        "COTA maîtrisé, victoire tactique sous le soleil du Texas.",
     },
     {
       gp: "Brésil",
       flag: "🇧🇷",
       qualif: "P4",
       course: "P4",
-      resume: "Interlagos très solide, proche du podium.",
+      resume:
+        "Interlagos très solide, proche du podium.",
     },
     {
       gp: "Las Vegas",
       flag: "🇺🇸",
       qualif: "P5",
       course: "P2",
-      resume: "Deuxième place sous les néons de Vegas, bataille intense jusqu’au bout.",
+      resume:
+        "Deuxième place sous les néons de Vegas, bataille intense jusqu’au bout.",
     },
     {
       gp: "Qatar",
       flag: "🇶🇦",
       qualif: "P6",
       course: "DNF",
-      resume: "Course interrompue par un abandon, week-end inachevé.",
+      resume:
+        "Course interrompue par un abandon, week-end inachevé.",
     },
     {
       gp: "Abu Dhabi",
       flag: "🇦🇪",
       qualif: "P17",
       course: "P2",
-      resume: "Finale à Yas Marina, énorme remontée jusqu’à la deuxième place.",
+      resume:
+        "Finale à Yas Marina, énorme remontée jusqu’à la deuxième place.",
     },
   ];
 
+  const getCourseColor = (course) => {
+    if (course === "P1") return "text-yellow-400";
+    if (course === "P2") return "text-gray-100";
+    if (course === "P3") return "text-orange-400";
+    if (course === "DNF") return "text-red-500";
+    return "text-athena-rose";
+  };
 
   return (
     <section id="season2026" className="bg-athena-black text-white py-20">
@@ -287,7 +307,7 @@ const Season2026 = () => {
           <h3 className="text-2xl font-bold text-athena-gold mb-6 flex items-center gap-2">
             📖 Résumé de la Saison 2026
           </h3>
-          <div className="text-gray-200 leading-relaxed space-y-4">
+          <div className="text-gray-200 leading-relaxed space-y-4 text-sm">
             <p>
               2026 n’a pas seulement été une saison de Formule 1. C’était un bras
               de fer permanent entre Serena Salvini, son équipe et une FIA perçue
@@ -299,16 +319,8 @@ const Season2026 = () => {
               <span className="text-athena-gold font-semibold">
                 Serena répond sur la piste
               </span>
-              . En{" "}
-              <span className="text-athena-gold">Autriche inversé</span>, elle
-              remonte le peloton. En{" "}
-              <span className="text-athena-gold">Belgique</span>, elle dompte la
-              pluie. Aux{" "}
-              <span className="text-athena-gold">Pays-Bas inversé</span>, elle
-              signe une remontée légendaire. À{" "}
-              <span className="text-athena-gold">Singapour</span> et{" "}
-              <span className="text-athena-gold">Austin</span>, elle transforme
-              la frustration en victoires éclatantes.
+              . Autriche inversé, Belgique, Pays-Bas inversé, Singapour, Austin :
+              chaque victoire est une réponse directe aux polémiques.
             </p>
             <p>
               Avec{" "}
@@ -316,14 +328,12 @@ const Season2026 = () => {
               ,{" "}
               <span className="text-athena-gold font-semibold">
                 13 podiums
-              </span>
-              ,{" "}
-              <span className="text-athena-gold font-semibold">4 pôles</span> et{" "}
-              <span className="text-athena-gold font-semibold">411 points</span>,
-              elle ne fait pas que survivre dans le peloton : elle s’impose comme
-              une force majeure au cœur d’une saison marquée par la controverse.
+              </span>{" "}
+              et{" "}
+              <span className="text-athena-gold font-semibold">4 pôles</span>, elle
+              termine vice-championne du monde, en ayant fait trembler le système.
             </p>
-            <p className="text-right italic text-athena-gold/80 mt-6">
+            <p className="text-right italic text-athena-gold/80 mt-4">
               « Ils peuvent me briser l’aileron, pas la volonté. » — Serena
               Salvini, 2026
             </p>
@@ -331,104 +341,114 @@ const Season2026 = () => {
         </motion.div>
 
         {/* STATS */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center mb-16"
+           <motion.div
+          className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {stats.map((s) => (
+          {stats2026.map((s) => (
             <div
               key={s.label}
-              className="bg-athena-blue/20 rounded-2xl p-6 shadow-lg hover:scale-105 transition"
+              className={`rounded-2xl px-6 py-4 text-center shadow-md bg-black/80 border ${
+                s.teamColor === "alpine"
+                  ? "border-[#FF73C5]"
+                  : s.teamColor === "redbull"
+                  ? "border-red-500"
+                  : "border-athena-gold/40"
+              }`}
             >
-              <p className="text-2xl md:text-3xl font-bold text-athena-gold">
+              <p
+                className={`text-2xl font-bold ${
+                  s.teamColor === "alpine"
+                    ? "text-[#FF73C5]"
+                    : s.teamColor === "redbull"
+                    ? "text-red-400"
+                    : "text-athena-gold"
+                }`}
+              >
                 {s.value}
               </p>
-              <p className="text-xs sm:text-sm mt-2 text-athena-rose">
+              <p
+                className={`mt-1 text-xs ${
+                  s.teamColor === "alpine"
+                    ? "text-[#FF73C5]/80"
+                    : s.teamColor === "redbull"
+                    ? "text-red-300/80"
+                    : "text-athena-rose"
+                }`}
+              >
                 {s.label}
               </p>
             </div>
           ))}
         </motion.div>
 
-        {/* MOMENTS FORTS : VICTOIRES */}
-        <h3 className="text-3xl font-bold text-athena-gold mb-10 text-center">
+
+
+            {/* MOMENTS FORTS 2026 (nouveau style) */}
+        <h3 className="text-3xl font-bold text-athena-gold mb-6 text-center">
           🏆 Moments forts : les 5 victoires de 2026
         </h3>
-        <div className="space-y-12 mb-20">
-          {highlights2026.map((h, idx) => (
-            <motion.div
-              key={h.id}
-              className="relative overflow-hidden rounded-3xl border border-athena-gold/40 bg-black/60"
-              initial={{ opacity: 0, y: 40 }}
+        <p className="text-sm text-neutral-300 mb-6 text-center">
+          Chaque victoire de 2026 est un bras de fer gagné contre la FIA, le
+          paddock ou les circonstances.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-20">
+          {moments2026.map((m, index) => (
+            <motion.article
+              key={m.key}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: idx * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden rounded-2xl border border-athena-gold/40 bg-black/70 shadow-lg flex flex-col"
             >
-              <div className="relative h-[260px] sm:h-[320px] lg:h-[360px]">
+              {/* Bannière image */}
+              <div className="relative h-24">
                 <img
-                  src={h.bg}
-                  alt={h.title}
+                  src={m.bg}
+                  alt={m.gpName}
                   className="absolute inset-0 w-full h-full object-cover opacity-70"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
-                <div className="relative z-10 h-full flex flex-col justify-between p-6 sm:p-8">
-                  <div>
-                    <h4 className="text-2xl sm:text-3xl font-bold text-athena-gold mb-1">
-                      {h.title}
-                    </h4>
-                    <p className="text-sm text-athena-rose mb-3">
-                      {h.subtitle}
-                    </p>
-                    <p className="text-sm sm:text-base text-gray-100 max-w-3xl">
-                      {h.text}
-                    </p>
-                  </div>
-                  <div className="flex justify-center sm:justify-end gap-6 mt-4">
-                    {/* P1 */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-yellow-400/80 border-4 border-yellow-300 flex items-center justify-center shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]">
-                        <img
-                          src={h.podiums.p1}
-                          alt="P1"
-                          className="w-[72%] h-[72%] rounded-full object-cover"
-                        />
-                      </div>
-                      <span className="mt-2 text-sm font-semibold text-yellow-300">
-                        P1
-                      </span>
-                    </div>
-                    {/* P2 */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gray-200/90 border-4 border-gray-100 flex items-center justify-center">
-                        <img
-                          src={h.podiums.p2}
-                          alt="P2"
-                          className="w-[72%] h-[72%] rounded-full object-cover"
-                        />
-                      </div>
-                      <span className="mt-2 text-sm font-semibold text-gray-100">
-                        P2
-                      </span>
-                    </div>
-                    {/* P3 */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-orange-500/90 border-4 border-orange-300 flex items-center justify-center">
-                        <img
-                          src={h.podiums.p3}
-                          alt="P3"
-                          className="w-[72%] h-[72%] rounded-full object-cover"
-                        />
-                      </div>
-                      <span className="mt-2 text-sm font-semibold text-orange-300">
-                        P3
-                      </span>
-                    </div>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
+                {/* Badge Alpine */}
+                <div className="absolute bottom-2 left-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff73c5]/80 border border-[#ffb3e4]/80 text-[10px] uppercase tracking-[0.2em] text-white">
+                  <span className="w-2 h-2 rounded-full bg-cyan-300" />
+                  <span>BWT Alpine F1 Team</span>
                 </div>
               </div>
-            </motion.div>
+
+              {/* Contenu texte */}
+              <div className="px-5 py-4 flex flex-col gap-2">
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-athena-rose mb-1">
+                    Moment fort 2026 • {m.gpName}
+                  </p>
+                  <h4 className="text-lg font-semibold text-athena-gold mb-1">
+                    {m.title}
+                  </h4>
+                  <p className="text-xs text-athena-rose mb-2">{m.subtitle}</p>
+                </div>
+
+                <div className="text-xs">
+                  <p className="font-semibold text-athena-gold">
+                    Qualifications :{" "}
+                    <span className="text-athena-rose">{m.quali}</span>
+                  </p>
+                  <p className="text-neutral-200 mb-2">
+                    Résultat en course :{" "}
+                    <span className="font-semibold text-yellow-400">
+                      {m.course}
+                    </span>
+                  </p>
+                </div>
+
+                <p className="text-sm text-neutral-300">{m.description}</p>
+              </div>
+            </motion.article>
           ))}
         </div>
 

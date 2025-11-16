@@ -4,8 +4,10 @@ import Hero from "./Hero";
 import Career from "./Career";
 import Season2025 from "./Season2025";
 import Season2026 from "./Season2026";
+import Season2027 from "./Season2027";
 import PressReleases from "./PressReleases";
 import Palmares from "./Palmares";
+import Stats from "./Stats";
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
             <li><a href="#career" className="hover:text-[#d4af37] transition">Carrière</a></li>
             <li><a href="#season2025" className="hover:text-[#d4af37] transition">Saison 2025</a></li>
             <li><a href="#season2026" className="hover:text-[#d4af37] transition">Saison 2026</a></li>
+            <li><a href="#season2027" className="hover:text-[#d4af37] transition">Saison 2027</a></li>
             <li><a href="#palmares" className="hover:text-[#d4af37] transition">Palmarès</a></li>
+            <li><a href="#stats" className="hover:text-[#d4af37] transition">Stats</a></li>
             <li><a href="#press" className="hover:text-[#d4af37] transition">Presse</a></li>
           </ul>
         </nav>
@@ -49,10 +53,10 @@ function App() {
           >
             <p><strong>Nom complet :</strong> Séréna Salvini</p>
             <p><strong>Nationalité :</strong> Italienne 🇮🇹</p>
-            <p><strong>Âge :</strong> 18 ans</p>
-            <p><strong>Équipe :</strong> BWT Alpine F1 Team</p>
+            <p><strong>Âge :</strong> 23 ans</p>
+            <p><strong>Équipe :</strong> Oracle Red Bull Racing</p>
             <p><strong>Numéro :</strong> 15</p>
-            <p><strong>Date de naissance :</strong> 12 mars</p>
+            <p><strong>Date de naissance :</strong> 12 mars 2002</p>
             <p><strong>Lieu de naissance :</strong> Mouscron (Belgique)</p>
             <p><strong>Club de foot préféré :</strong> Olympique de Marseille 💙🤍</p>
             <p><strong>Équipe NBA :</strong> Golden State Warriors 💛💙</p>
@@ -60,9 +64,16 @@ function App() {
             <p><strong>Plat préféré :</strong> Pâtes 🍝</p>
             <p>
               <strong>Meilleure amie :</strong> Amélia Étienne (
-              <a href="https://instagram.com/ameliatnn" target="_blank" className="text-athena-rose hover:underline">@ameliatnn</a>)
+              <a
+                href="https://instagram.com/ameliatnn"
+                target="_blank"
+                className="text-athena-rose hover:underline"
+              >
+                @ameliatnn
+              </a>
+              )
             </p>
-            <p><strong>Twitter :</strong> <a href="https://twitter.com/Serenaaade_" target="_blank" className="text-athena-rose hover:underline">@Serenaaade_</a></p>
+            <p><strong>Twitter :</strong> <a href="https://twitter.com/Serenaade_"target="bland" className="text-athena-rose hover:underline">@Serenaaade_</a></p>
             <p><strong>Instagram :</strong> <a href="https://instagram.com/Serenaaade_" target="_blank" className="text-athena-rose hover:underline">@Serenaaade_</a></p>
 
             <p className="italic text-athena-rose mt-6">
@@ -93,9 +104,13 @@ function App() {
       {/* Saisons */}
       <section id="season2025"><Season2025 /></section>
       <section id="season2026"><Season2026 /></section>
+      <section id="season2027"><Season2027 /></section>
 
       {/* Palmarès */}
       <section id="palmares"><Palmares /></section>
+
+      {/* Stats */}
+      <section id="stats"><Stats /></section>
 
       {/* Presse */}
       <section id="press"><PressReleases /></section>
@@ -104,30 +119,71 @@ function App() {
       <section className="py-16 bg-gradient-to-b from-black via-[#0a0a0a] to-[#111] text-center border-t border-athena-gold/40">
         <h2 className="text-3xl font-bold text-athena-gold mb-10">Nos Sponsors Officiels</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-10 px-8 max-w-6xl mx-auto">
-          {[
-            { name: "Alpine", img: "/sponsors/alpine.png", url: "https://www.alpinecars.com/" },
-            { name: "Pirelli", img: "/sponsors/pirelli.png", url: "https://www.pirelli.com/" },
-            { name: "TAG Heuer", img: "/sponsors/tagheuer.png", url: "https://www.tagheuer.com/" },
-            { name: "Dior", img: "/sponsors/dior.png", url: "https://www.dior.com/fr_be/fashion/products/M2820OSHJ_M900" },
-            { name: "Sephora", img: "/sponsors/sephora.png", url: "https://www.sephora.fr/" },
-            { name: "Louboutin", img: "/sponsors/louboutin.png", url: "https://us.christianlouboutin.com/us_en/so-kate-black-3130694bk01.html" },
-            { name: "Naked Wolfe", img: "/sponsors/nakedwolfe.png", url: "https://nakedwolfe.com/products/spice-black-stretch" },
-          ].map((sponsor, i) => (
-            <motion.a
-              key={i}
-              href={sponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.08 }}
-              className="flex justify-center items-center"
-            >
-              <img
-                src={sponsor.img}
-                alt={sponsor.name}
-                className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-all duration-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]"
-              />
-            </motion.a>
-          ))}
+          
+                    {[
+            {
+              name: "Oracle Red Bull Racing",
+              img: "/sponsors/redbull.png",
+              url: "https://www.redbullracing.com/",
+            },
+            {
+              name: "TAG Heuer",
+              img: "/sponsors/tagheuer.png",
+              url: "https://www.tagheuer.com/",
+            },
+            {
+              name: "Dior",
+              img: "/sponsors/dior.png",
+              url: "https://www.dior.com/fr_be/fashion/products/M2820OSHJ_M900",
+            },
+            {
+              name: "Sephora",
+              img: "/sponsors/sephora.png",
+              url: "https://www.sephora.fr/",
+            },
+            {
+              name: "Christian Louboutin",
+              img: "/sponsors/louboutin.png",
+              url: "https://us.christianlouboutin.com/us_en/so-kate-black-3130694bk01.html",
+            },
+            {
+              name: "Naked Wolfe",
+              img: "/sponsors/nakedwolfe.png",
+              url: "https://www.nakedwolfe.com/products/spice-black-stretch",
+            },
+            {
+              name: "Victoria’s Secret",
+              img: "/sponsors/victoriasecret.png",
+              url: "https://www.victoriassecret.com/",
+            },
+].map((sponsor, i) => {
+  const isDarkLogo = ["Dior", "Sephora"].includes(sponsor.name);
+
+  return (
+    <motion.a
+      key={i}
+      href={sponsor.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center hover:scale-110 transition-transform duration-500"
+      whileHover={{ scale: 1.12 }}
+    >
+      <img
+        src={sponsor.img}
+        alt={sponsor.name}
+        className={`
+          w-32 h-32 object-contain mb-3
+          opacity-100
+          drop-shadow-[0_0_12px_rgba(255,215,0,0.35)]
+          hover:drop-shadow-[0_0_18px_rgba(255,215,0,0.65)]
+          transition-all duration-300
+          ${isDarkLogo ? "bg-white/90 p-3 rounded-xl" : ""}
+        `}
+      />
+      <p className="text-athena-gold font-semibold text-sm">{sponsor.name}</p>
+    </motion.a>
+  );
+})}
         </div>
       </section>
 

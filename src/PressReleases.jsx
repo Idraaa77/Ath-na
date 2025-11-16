@@ -3,6 +3,30 @@ import { motion } from "framer-motion";
 
 const articles = [
   {
+    title: "Serena Salvini signe chez Oracle Red Bull Racing",
+    date: "Janvier 2027",
+    source: "Motorsport.com",
+    excerpt:
+      "Après deux saisons explosives chez Alpine, Serena Salvini rejoint Oracle Red Bull Racing. Le paddock parle d’un transfert sismique : la pilote qui défie la FIA rejoint l’équipe qui défie la logique.",
+    image: "/press/redbull2027.jpg",
+  },
+  {
+    title: "Vice-championne du monde : Salvini fait vaciller la F1",
+    date: "4 décembre 2026",
+    source: "BBC Sport",
+    excerpt:
+      "Cinq victoires, treize podiums, une saison en guerre ouverte avec les instances. Serena Salvini termine vice-championne du monde, mais pour beaucoup, elle est déjà la championne du peuple.",
+    image: "/press/vicechamp2026.jpg",
+  },
+  {
+    title: "De la grille au catwalk : Salvini chez Victoria’s Secret",
+    date: "Novembre 2026",
+    source: "Vogue US",
+    excerpt:
+      "Casque posé, talons aux pieds. Serena Salvini défile pour Victoria’s Secret, brouillant les frontières entre puissance et sensualité. Une pilote de F1 sur le catwalk : un symbole de nouvelle génération.",
+    image: "/press/victoriasecret2026.jpg",
+  },
+  {
     title: "Serena Salvini — La pluie, la grâce et la victoire",
     date: "26 mai 2025",
     source: "The Race",
@@ -67,14 +91,14 @@ const PressReleases = () => {
         {articles.map((article, index) => (
           <motion.div
             key={index}
-            className="relative rounded-2xl overflow-hidden shadow-lg border border-athena-gold/30 hover:shadow-athena-gold/40 transition-all duration-500 group"
+            className="relative rounded-2xl overflow-hidden shadow-lg border border-athena-gold/30 hover:shadow-athena-gold/40 transition-all duration-500 group bg-black/80"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* IMAGE */}
-            <div className="h-64 w-full overflow-hidden">
+            {/* IMAGE PLUS GRANDE */}
+            <div className="h-80 w-full overflow-hidden">
               <motion.img
                 src={article.image}
                 alt={article.title}
@@ -83,7 +107,7 @@ const PressReleases = () => {
             </div>
 
             {/* TEXTE */}
-            <div className="p-6 bg-black/70 backdrop-blur-sm">
+            <div className="p-6 bg-black/80 backdrop-blur-sm">
               <p className="text-xs uppercase text-athena-rose mb-2">
                 {article.source} — {article.date}
               </p>
