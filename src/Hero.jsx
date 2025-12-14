@@ -45,14 +45,14 @@ const Hero = () => {
           transition={{ delay: 1.2, duration: 1 }}
         >
           <img
-            src="/sponsors/redbull.png"
-            alt="Red Bull Racing"
+            src="/sponsors/ferrari.png"
+            alt="Scuderia Ferrari"
             className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
 
           <img
-            src="/sponsors/tagheuer.png"
-            alt="TAG Heuer"
+            src="/sponsors/hp.png"
+            alt="hp"
             className="h-10 md:h-12 opacity-90 hover:opacity-100 transition-transform hover:scale-110"
           />
 

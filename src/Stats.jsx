@@ -19,12 +19,16 @@ const disciplineBreakdown = [
 
 // Statistiques globales F1 (avec 2027)
 const f1GlobalStats = [
-  { label: "Saisons disputées en F1", value: "3", hint: "2025 • 2026 • 2027 (en cours)" },
-  { label: "Grands Prix disputés", value: "53", hint: "Total de départs en F1" },
-  { label: "Victoires en F1", value: "10", hint: "Dont 4 déjà en 2027" },
-  { label: "Podiums en F1", value: "21", hint: "Régularité sur trois saisons complètes" },
-  { label: "Poles position en F1", value: "5", hint: "Toujours dangereuse sur un tour" },
-  { label: "Meilleur classement pilote", value: "2ᵉ", hint: "Vice-championne du monde 2026" },
+  { label: "Saisons disputées en F1", value: "3", hint: "2025 • 2026 • 2027 (terminée)" },
+
+  // ⚠️ Je mets 72 par cohérence 2025+2026+2027 (3 saisons complètes).
+  // Si ton mode carrière a un nombre de GP différent, dis-moi le total exact et je te l’ajuste.
+  { label: "Grands Prix disputés", value: "72", hint: "Total de départs en F1 (3 saisons complètes)" },
+
+  { label: "Victoires en F1", value: "15", hint: "1 (2025) • 5 (2026) • 9 (2027)" },
+  { label: "Podiums en F1", value: "32", hint: "5 (2025) • 11 (2026) • 16 (2027)" },
+  { label: "Poles position en F1", value: "12", hint: "0 (2025) • 4 (2026) • 8 (2027)" },
+  { label: "Meilleur classement pilote", value: "1ᵉʳ", hint: "Championne du monde 2027" },
 ];
 
 
@@ -52,11 +56,11 @@ const f1SeasonStats = [
   {
     season: "2027",
     team: "Oracle Red Bull Racing",
-    wins: 4,
-    podiums: 5,
-    poles: 1,
-    points: 122,
-    position: "En cours",
+    wins: 9,
+    podiums: 16,
+    poles: 8,
+    points: 392,
+    position: "1ᵉʳ (Championne du monde)",
   },
 ];
 

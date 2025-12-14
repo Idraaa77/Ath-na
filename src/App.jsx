@@ -76,8 +76,8 @@ function App() {
             <div className="relative w-full max-w-6xl px-6 flex flex-col items-center">
               {/* LOGO RED BULL */}
               <motion.img
-                src="/sponsors/redbull.png"
-                alt="Red Bull Logo"
+                src="/sponsors/ferrari.png"
+                alt="Scuderia Ferrari"
                 className="w-40 mb-10 opacity-90"
                 initial={{ opacity: 0, scale: 0.7, y: -20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -107,14 +107,14 @@ function App() {
   SERENA SALVINI
 </motion.h1>
 
-{/* ATHÉNA // RED BULL RACING — bien centré, espacé */}
+{/* ATHÉNA // Scuderia Ferrari — bien centré, espacé */}
 <motion.p
   className="mt-5 text-sm md:text-base uppercase tracking-[0.45em] text-athena-rose/90"
   initial={{ opacity: 0, y: 10 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.7, duration: 0.5 }}
 >
-  ATHÉNA // RED BULL RACING
+  ATHÉNA // Scuderia Ferrari
 </motion.p>
 
 {/* TAGLINE */}
@@ -312,14 +312,14 @@ function App() {
           
                     {[
             {
-              name: "Oracle Red Bull Racing",
-              img: "/sponsors/redbull.png",
-              url: "https://www.redbullracing.com/",
+              name: "Scuderia Ferrari",
+              img: "/sponsors/ferrari.png",
+              url: "https://www.ferrari.com/en-EN/formula1/",
             },
             {
-              name: "TAG Heuer",
-              img: "/sponsors/tagheuer.png",
-              url: "https://www.tagheuer.com/",
+              name: "HP",
+              img: "/sponsors/hp.png",
+              url: "https://www.hp.com/be-fr/home.html/",
             },
             {
               name: "Dior",
